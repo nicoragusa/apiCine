@@ -26,7 +26,11 @@ public abstract class Promocion {
 		this.agente = agente;
 		this.porcentaje = porcentaje;
 	}
-
+	
+	public Promocion() {
+		
+	}	
+	
 	public String getDetalle() {
 		return detalle;
 	}

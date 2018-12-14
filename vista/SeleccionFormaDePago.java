@@ -71,7 +71,7 @@ public class SeleccionFormaDePago extends JFrame {
 	 */
 	public SeleccionFormaDePago() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 357);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -112,7 +112,7 @@ public class SeleccionFormaDePago extends JFrame {
 		panel.add(lblNroTarjeta);
 		
 		nro = new JTextField();
-		nro.setBounds(92, 8, 173, 20);
+		nro.setBounds(119, 8, 173, 20);
 		panel.add(nro);
 		nro.setColumns(10);
 		
@@ -142,7 +142,7 @@ public class SeleccionFormaDePago extends JFrame {
 		panel.add(lblEntidadBancaria);
 		
 		banco = new JTextField();
-		banco.setBounds(119, 33, 216, 20);
+		banco.setBounds(119, 33, 173, 20);
 		panel.add(banco);
 		banco.setColumns(10);
 		
@@ -151,7 +151,7 @@ public class SeleccionFormaDePago extends JFrame {
 		panel.add(lblTitular);
 		
 		titular = new JTextField();
-		titular.setBounds(92, 57, 173, 20);
+		titular.setBounds(119, 57, 173, 20);
 		panel.add(titular);
 		titular.setColumns(10);
 		
@@ -193,7 +193,7 @@ public class SeleccionFormaDePago extends JFrame {
 				dispose();
 			}
 		});
-		btnConfirmar.setBounds(283, 227, 99, 23);
+		btnConfirmar.setBounds(234, 279, 99, 23);
 		contentPane.add(btnConfirmar);
 		
 		JButton btnAtras = new JButton("Atras");
@@ -204,8 +204,21 @@ public class SeleccionFormaDePago extends JFrame {
 				dispose();
 			}
 		});
-		btnAtras.setBounds(32, 227, 89, 23);
+		btnAtras.setBounds(84, 279, 89, 23);
 		contentPane.add(btnAtras);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 207, 414, 49);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblPromocin = new JLabel("Promoci\u00F3n:");
+		lblPromocin.setBounds(10, 11, 84, 14);
+		panel_1.add(lblPromocin);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(87, 8, 165, 20);
+		panel_1.add(comboBox_1);
 		this.setTitle("Venta de entradas-Forma de pago");
 	}
 }

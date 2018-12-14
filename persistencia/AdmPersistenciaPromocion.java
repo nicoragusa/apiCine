@@ -2,8 +2,11 @@ package persistencia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Vector;
 
+import Negocio.Arreglo;
 import conexionBD.PoolConnection;
 import negocio.*;
 
@@ -61,11 +64,28 @@ public class AdmPersistenciaPromocion extends AdministradorPersistencia {
 	 * @param void
 	 * @return Vector*/
 	public Vector<Promocion> selectAll() {
-		// TODO Auto-generated method stub
-		
-		//Select where estado=1
-		
-		return null;
+		Vector<Promocion> arr=new Vector<Promocion>();
+		ResultSet rs;
+		Connection c=PoolConnection.getPoolConnection().getConnection();
+		String sql="Select * from dbo.api.Promocion";
+		try{
+			Statement s=c.createStatement();
+			rs=s.executeQuery(sql);
+			PoolConnection.getPoolConnection().realeaseConnection(c);
+			while(rs.next()){
+				int idArr=rs.getInt(1);
+				Promocion arreglo = new Promocion();
+				arreglo.setCostoArreglo(rs.getFloat(4));
+				arreglo.setDescripcion(rs.getString(3));
+				arreglo.setIdArreglo(idArr);
+				arreglo.setNombre(rs.getString(2));
+				arreglo.setEstado(rs.getBoolean(5));
+				arr.add(arreglo);
+			}
+		}catch(Exception e){
+			e.printStackTrace();			
+		}
+		return arr;
 	}
 	@Override
 	public Vector<Object> select(Object o) {

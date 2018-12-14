@@ -1,0 +1,6 @@
+jdbc=jdbc:sqlserver://
+servidor=DESKTOP-U4AVPMM\\SQLEXPRESS:1433
+usuario=Rufus
+password=rufus15
+conexiones=5
+nombreDB=[api].[DBO]
